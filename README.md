@@ -1,4 +1,4 @@
-# Distributed Web Scraping App
+# Webbly - A Distributed Web Scraping App
 
 Webbly is a distributed Web Scraping App that collects product information from multiple pages of a website.
 
