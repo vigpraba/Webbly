@@ -1,0 +1,18 @@
+#this compose contains many services, but for now we only need redis for the distributed app to work.
+#Each service is backed by a container created from an image.
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  redis_data:
